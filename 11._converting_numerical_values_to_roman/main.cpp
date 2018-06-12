@@ -33,7 +33,7 @@ int main() {
 	while (number > 0) {
 		for (auto i = length_of_values-1; i >= 0; i--) {
 			auto value = roman_values[i];
-			if ((number >= value) or value == 1) {
+			if ((number >= value) or (value == 1)) {
 				number -= value;
 				answer += roman_keys[i];
 				break;
