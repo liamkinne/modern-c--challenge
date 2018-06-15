@@ -3,7 +3,8 @@
 #include <algorithm>
 using namespace std;
 
-bool any(vector<auto> source_list, initializer_list<auto> test_list) {
+template <typename T>
+bool any(vector<T> source_list, initializer_list<T> test_list) {
 	for (source : source_list) {
 		for (test : test_list) {
 			if (source == test)
@@ -13,7 +14,8 @@ bool any(vector<auto> source_list, initializer_list<auto> test_list) {
 	return false;
 }
 
-bool none(vector<auto> source_list, initializer_list<auto> test_list) {
+template <typename T>
+bool none(vector<T> source_list, initializer_list<T> test_list) {
 	for (source : source_list) {
 		for (test : test_list) {
 			if (source == test)
@@ -23,8 +25,9 @@ bool none(vector<auto> source_list, initializer_list<auto> test_list) {
 	return true;
 }
 
-bool all(vector<auto> source_list, initializer_list<auto> input_list) {
-	vector<int> test_list = input_list;
+template <typename T>
+bool all(vector<T> source_list, initializer_list<T> input_list) {
+	vector<T> test_list = input_list;
 
 	for (source : source_list) {
 		for (test : test_list) {
